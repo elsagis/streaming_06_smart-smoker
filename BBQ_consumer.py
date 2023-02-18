@@ -1,5 +1,5 @@
 """
-This program creates a producer and multiple task queues (RabbitMQ).
+This program creates a consumer and multiple task queues (RabbitMQ).
 It reads data from the smoker-temps.csv file for smart smokers.
 
 ## Author : Elsa Ghirmazion
