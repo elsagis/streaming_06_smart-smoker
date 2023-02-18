@@ -46,5 +46,5 @@ Code example: from collections import deque smoker_deque = deque(maxlen=5) # lim
 Screenshot
 ![Consumer-06](https://user-images.githubusercontent.com/105325747/219844846-107287f4-9348-4eb3-ad42-a4c02f637bb6.png)
 ![Consumer-A-B](https://user-images.githubusercontent.com/105325747/219844873-0d2890fa-58ee-4ad2-804b-ed07cd703b97.png)
-![B_Smoker_A](https://user-images.githubusercontent.com/105325747/219844897-a627e34d-498b-490f-87dc-fb1b4e3122ef.png)
+
 
