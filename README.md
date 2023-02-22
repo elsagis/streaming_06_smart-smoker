@@ -47,6 +47,8 @@ Screenshot
 ![Consumer-A-B](https://user-images.githubusercontent.com/105325747/219844873-0d2890fa-58ee-4ad2-804b-ed07cd703b97.png)
 ![Producer_RabbitMq](https://user-images.githubusercontent.com/105325747/220522544-a54a8dda-16b2-496f-bd5b-d09814262fae.png)
 ![Producer_rabitmq2](https://user-images.githubusercontent.com/105325747/220522864-58923d57-08c2-44c0-8554-2aa54b3930e1.png)
+![Producer_consumer](https://user-images.githubusercontent.com/105325747/220523925-2fd0aada-2bf8-43cf-9f9c-9c69e86d8c9e.png)
+
 
 
 
