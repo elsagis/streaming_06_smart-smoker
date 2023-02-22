@@ -3,16 +3,17 @@
 
 """"  
  This program sends a message to a queue on the RabbitMQ server.
-    We want to stream information from a smart smoker. Read one value every half minute
+ We want to stream information from a smart smoker. Read one value every half minute
   Based on Module 4 version 3 .py program
 """
-
+####################################################################################################
 import pika
 import sys
 import webbrowser
 import socket
 import csv
 import time
+#####################################################################################################
 
 def offer_rabbitmq_admin_site():
     """Offer to open the RabbitMQ Admin website"""
@@ -23,6 +24,7 @@ def offer_rabbitmq_admin_site():
         webbrowser.open_new("http://localhost:15672/#/queues")
         print()
 
+#####################################################################################################
 # define variables
 input_file = open("smoker-temps.csv", "r")
 queue1 = "01-smoker"
@@ -40,7 +42,7 @@ def send_message(host: str, queue_name: str, message: str):
         queue3 (str): the queue for the second food temperature reading/Channel 3
         message (str): the message to be sent to the queue
     """
-
+###############################################################################################
     try:
         # create a blocking connection to the RabbitMQ server
         conn = pika.BlockingConnection(pika.ConnectionParameters(host))
@@ -85,10 +87,9 @@ for row in reader:
     for row in reader:
     # read a row from the file
         Time, Channel1, Channel2, Channel3 = row
-
+##################################################################################
 # send message to queue1 from Channel1
         try:
-
     # use an fstring to create a message from our data
     # notice the f before the opening quote for our string?
             fstring_message = f"[{Time}, {Channel1}]"
@@ -102,7 +103,7 @@ for row in reader:
 
         except ValueError:
             pass
-
+############################################################################################
  # send message to queue1 from Channel2
         try:
 
@@ -119,7 +120,7 @@ for row in reader:
 
         except ValueError:
             pass
-
+#########################################################################################
 # send message to queue1 from Channel3
         try:
 
@@ -142,7 +143,7 @@ for row in reader:
         time.sleep(30)
 
 
-
+###############################################################################
 # Standard Python idiom to indicate main program entry point
 # This allows us to import this module and use its functions
 # without executing the code below.
