@@ -11,10 +11,13 @@ import pickle
 from collections import deque
 ###################################################################################################################################
 # limit smoker readings to last 2.5 minuts/5 readings
+smoker_deque = "01-smoker"
 smoker_deque = deque(maxlen=5)
 # limit food a readings to last 10 minutes/20 readings
+food_a_deque = "02-food-A"
 food_a_deque = deque(maxlen=20)
 # limit food b readings to last 10 minutes/20 readings
+food_b_deque = "03-food-B"
 food_b_deque = deque(maxlen=20)
 
 
@@ -152,7 +155,7 @@ def main(hn: str):
         # use the channel to declare a durable queues
         channel.queue_declare(queue="01-smoker", durable=True)
         channel.queue_declare(queue="02-food-A", durable=True)
-        channel.queue_declare(queue="02-food-B", durable=True)
+        channel.queue_declare(queue="03-food-B", durable=True)
 
         # set the prefetch count    
         channel.basic_qos(prefetch_count=1) 
@@ -160,7 +163,7 @@ def main(hn: str):
         # configure the channel to listen on a specific queue,  
         channel.basic_consume( queue="01-smoker", on_message_callback=smoker_callback)
         channel.basic_consume( queue="02-food-A", on_message_callback=food_a_callback)
-        channel.basic_consume( queue="02-food-B", on_message_callback=food_b_callback)
+        channel.basic_consume( queue="03-food-B", on_message_callback=food_b_callback)
 
         # print a message to the console for the user
         print(" [*] Ready for work. To exit press CTRL+C")
